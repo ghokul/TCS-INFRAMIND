@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+    <style>
+        body
+        {
+            
+         background-repeat: no-repeat;
+         
+         background-size: cover;
+         background-position: 0px -150px;
+
+         background-image:url(/static/imgfile/10.jpg)
+
+        }
+    
+    </style>
+        <form id="frm1" action="{{url_for("hello")}}"method="POST" >
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">CUSTOMIZE YOUR STACK</legend>
+                <div class="form-group">
+                    {{ form.Description.label(class="form-control-label") }}
+
+                    {% if form.Description.errors %}
+                        {{ form.Description(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.Description.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.Description(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.KeyPair.label(class="form-control-label") }}
+                    {% if form.KeyPair.errors %}
+                        {{ form.KeyPair(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.KeyPair.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.KeyPair(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.InstanceType.label(class="form-control-label") }}
+                    {% if form.InstanceType.errors %}
+                        {{ form.InstanceType(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.InstanceType.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.InstanceType(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.DBname.label(class="form-control-label") }}
+                    {% if form.DBname.errors %}
+                        {{ form.DBname(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.DBname.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.DBname(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.DBuser.label(class="form-control-label") }}
+                    {% if form.DBuser.errors %}
+                        {{ form.DBuser(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.DBuser.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.DBuser(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.DBpassword.label(class="form-control-label") }}
+                    {% if form.DBpassword.errors %}
+                        {{ form.DBpassword(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.DBpassword.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.DBpassword(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.DBRootPassword.label(class="form-control-label") }}
+                    {% if form.DBRootPassword.errors %}
+                        {{ form.DBRootPassword(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.DBRootPassword.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.DBRootPassword(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.CreateStack(class="btn btn-outline-info") }}
+            </div>
+        
+    </div>
+    
+{% endblock content %}

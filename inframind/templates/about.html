@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<html>
+<head>
+    <style>
+        body
+        {
+            
+         background-repeat: no-repeat;
+         background-attached: fixed;
+         background-size: cover;
+         background-position: 0px -160px;
+         
+         background-image:url({{url_for('static',filename='imgfile/10.jpg')}})
+
+        }
+    
+    </style>
+</head>
+</html>
+
+{% endblock content %}
